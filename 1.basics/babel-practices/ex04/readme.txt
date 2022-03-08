@@ -16,6 +16,9 @@ $npm list --depth=1
 Env Preset 설정(브라우저 타겟 설정)
 브라우저별 es6 호환성 테이블(kangax.github.io/compat-table/es6)
 
+변환하기
+$npx babel src/ex.js -o /dist/ex.js
+
 
 
 

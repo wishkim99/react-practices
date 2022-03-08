@@ -10,10 +10,15 @@ module.exports = {
     },
     module: {
         rules:[{
+            test: /\.js$/i,
+            exclude: /node_modules/, 
+            use: ['babel-loader']
+        },
+            {
             test: /\.(sa|sc|c)ss$/i,
             use: ['style-loader', 'css-loader', 'sass-loader']
         }, {
-            test: /\.(png|git|jpe?g|svg|ico|tiff?|bmp)$/i,
+            test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
             type: 'asset/resource'
         }]
     },
@@ -22,6 +27,7 @@ module.exports = {
         port: 9090,
         liveReload: true,
         hot: false,
-        compress: true
+        compress: true,
+        historyApiFallback: true
     } 
 }
