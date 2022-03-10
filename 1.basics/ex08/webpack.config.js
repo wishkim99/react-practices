@@ -1,9 +1,9 @@
 const path = require('path');
 
-module.exports = function(env){
+module.exports = function(env) { 
     return {
         mode: 'development',
-        entry: path.resolve('src/${env.src}/index.js'),
+        entry: path.resolve(`src/${env.src}/index.js`),
         output: {
             path: path.resolve('public'),
             filename: 'main.js',
@@ -12,14 +12,13 @@ module.exports = function(env){
         module: {
             rules:[{
                 test: /\.js$/i,
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
                 use: ['babel-loader']
-            },
-                {
+            }, {
                 test: /\.(sa|sc|c)ss$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             }, {
-                test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
+                test: /\.(png|git|jpe?g|svg|ico|tiff?|bmp)$/i,
                 type: 'asset/resource'
             }]
         },
