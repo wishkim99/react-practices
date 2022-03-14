@@ -28,7 +28,7 @@ ex01: Property
   }
 
 4. 실행
-$ npm run debug src=01
+$ npm run debug src={01|02|03...}
 
 스크립트 추가하기
 
