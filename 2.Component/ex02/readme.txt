@@ -2,8 +2,11 @@ ex02: Component Styling(Working with UI)
 
 01. Inline Styling
 02. Normal CSS(css-loader options: {module: false})
+  -$ npm run debug src=03 css-modules=false
 03. Normal CSS(css-loader options: {module: true})
+  -$ npm run debug src=03 css-modules=true
 04. CSS Module(css-loader options: {module:true})
+  -$ npm run debug src=04 css-modules=true
 
 1. 설치
  $npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
@@ -20,7 +23,7 @@ ex02: Component Styling(Working with UI)
   }
 
 4. 실행
-$ npm run debug src={01|02|03...}
+$ npm run debug src={01|02|03|04|...} css-modules={[true]|false}
 
 스크립트 추가하기
 
