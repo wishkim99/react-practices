@@ -1,8 +1,14 @@
 import React from 'react'
+import BoardList from './BoardList';
+import css from './public/styles.css'
 
 const App = () => {
+ let boards=require("../public/data.json")
+
   return (
-    <div>KanbanBoard</div>
+    <div id="KanbanBoard">
+      <BoardList boards={css.boards}/>
+    </div>
   )
 }
 

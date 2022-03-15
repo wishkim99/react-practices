@@ -1,12 +1,23 @@
 ex02: Component Styling(Working with UI)
 
 01. Inline Styling
+
 02. Normal CSS(css-loader options: {module: false})
   -$ npm run debug src=03 css-modules=false
+
 03. Normal CSS(css-loader options: {module: true})
   -$ npm run debug src=03 css-modules=true
+
 04. CSS Module(css-loader options: {module:true})
   -$ npm run debug src=04 css-modules=true
+
+05. SACC & SCSS(css-loader options: {module:true})
+  ------------------------------------------------
+  CSS in JS(Style Component), Less & Styleable
+
+06. Font Awesome: Working with UI I
+
+07. React Modal: Working with UI I
 
 1. 설치
  $npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
