@@ -5,7 +5,7 @@ ex04: Component-state
     -컴포넌트 내부의 현재 상태를 나타내는 쓰기 가능한 데이터
     -컴포넌트는 this.state 안에 에러 데이터(상태) 가질 수 있다.
     -this.state은 특정 컴포넌트 전용이며 변경을 위해서는 setState 함수를 사용(Class Component)
-    -상태가 업데이트되면 컴포넌트 반응형(Reactive) Rendering이 트리거되고 컴포넌트와 자식 컴포넌트가 다시 렌더링
+    -상태가 업데이트되면 컴포넌트 반응형(Reactive) Rendering이 트리거되고 컴포넌트와 자식 컴포넌트가 다시 렌더링=> 화면이 상태에 반영된다는 의미
     -컴포넌트의 동작(event)와 상호작용을 수행할 수 있는 매커니즘을 제고한다.
     -클래스 컴포넌트에서는 constructor에서 초기화를 한다.
     -클래스 컴포넌트에서 상태변경을 위해서는 setState함수를 사용
@@ -15,8 +15,13 @@ ex04: Component-state
   2. 예제: src/01
 
 02. 제어 컴포넌트
-    src/02 제어 컴포넌트
-    src/03 비제어 컴포넌트
+    1. input, textarea, option과 같은 폼 컴포넌트 중에 사용자 입력에 따라서 state 값이 
+        변경되고 렌더링하는 컴포넌트를 제어(Controlled) 컴포넌트라 한다.
+    2.
+    3.
+    4. 예제    
+    - src/02 제어 컴포넌트
+    - ㄴsrc/03 비제어 컴포넌트
 
 03. 상태(Stateful)컴포넌트 vs 순수(Pure, Dumb) 컴포넌트
     emaillist
@@ -41,3 +46,8 @@ ex04: Component-state
 
 4. 실행
 $ npm run debug src={01|02|03|04|...} 
+
+
+===================================
+제어문-알고리즘, 비즈니스, 로직 => 제어문은 표현식이 아님!
+

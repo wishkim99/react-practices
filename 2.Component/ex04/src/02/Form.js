@@ -13,7 +13,7 @@ export default function Form() {
         //e.target이 inputs
         //setName(e.target.value) //이런식으로 할거면(validation을 안할거면) 그냥 비제어가 나음
         //10자 제한
-        setName(e.target.value.substr(0,10));
+        setName(e.target.value.substr(0,10)); //입력하는대로 바꿔짐
     }
 
     const onChangeInputEmail=function(e){
@@ -42,14 +42,14 @@ export default function Form() {
                 name="email" 
                 type="text" 
                 value={ email }
-                onChange={onChangeInputEmail}
+                onChange={onChangeInputEmail} //onChange에서 value값 변경-> 제어 컴포넌트
             />
         {
             email===''?
-            null:
-            validEmail ? 
-                <FontAwesomeIcon icon={faCheckCircle} style={{fontSize: 16, color: 'blue'}}/> : 
-                <FontAwesomeIcon icon={faTimesCircle} style={{fontSize: 16, color: 'red'}}/>
+                null:
+                validEmail ? 
+                    <FontAwesomeIcon icon={faCheckCircle} style={{marginLeft:5, fontSize: 16, color: 'blue'}}/> : 
+                    <FontAwesomeIcon icon={faTimesCircle} style={{marginLeft:5, fontSize: 16, color: 'red'}}/>
         }
             <label htmlFor="password">패스워드</label>
             <input id="password" name="password" type="password" value={ "" } />
