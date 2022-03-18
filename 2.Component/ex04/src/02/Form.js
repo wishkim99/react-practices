@@ -6,7 +6,13 @@ import './assets/Form.css';
 export default function Form() {
     const[name, setName]=useState(""); //상태
     const[email, setEmail]=useState("");
+    const[password, setPassword]=useState("");
     const[validEmail, setValidEmail]=useState(false);
+    const[gender, setGender]=useState("female");
+    const[birthYear, setBirthYear]=useState('1984'); //선택값 1984로 초기화
+    const[description, setDescription]=useState(''); 
+    const[agreeProv, setAgreeProv]=useState('no'); //agreeProv가 no가 됨
+
 
     //value를 주면 값이 고정됨, onChange는 원래 있는 property
     const onChangeInputName=function(e){
@@ -25,6 +31,28 @@ export default function Form() {
         setValidEmail(re.test(e.target.value));
     }
 
+    const onChangeInputGender = function(e){
+        setGender(e.target.value);
+    }
+
+    const onChangeAgreeProv=function(e){
+      // if(e.target.value==='no'){
+      //     setAgreeProv('yes');
+      // }
+      // if(e.target.value==='yes'){
+      //  setAgreeProv('no');
+      //  }
+
+        const status=e.target.value==='no'?'yes':'no';
+
+        //API 호출(이런식으로 해야됨)
+        const url=`/prov/agree?status=${status}`;
+       // result=await fetch(url);
+        console.log(url);
+        if(true){
+            setAgreeProv(status);
+        }
+    }
     return (
         <form id="joinForm" name="joinForm" method="post" action="/do/not/post">
             <label htmlFor="name">이름</label>
@@ -52,16 +80,22 @@ export default function Form() {
                     <FontAwesomeIcon icon={faTimesCircle} style={{marginLeft:5, fontSize: 16, color: 'red'}}/>
         }
             <label htmlFor="password">패스워드</label>
-            <input id="password" name="password" type="password" value={ "" } />
+            <input 
+                id="password" 
+                name="password" 
+                type="password" 
+                value={password} 
+                onChange={e=>setPassword(e.target.value)}/>
 
             <fieldset>
                 <legend>성별</legend>
-                <label>여</label> <input type="radio" name="gender" value={ "female" } defaultChecked={ true } />
-                <label>남</label> <input type="radio" name="gender" value={ "male" } defaultChecked={ false } />
+                <label>여</label> <input type="radio" name="gender" value={ "female" } defaultChecked={ true }  checked={gender==='female'} onChange={onChangeInputGender}/>
+                <label>남</label> <input type="radio" name="gender" value={ "male" } defaultChecked={ false }  checked={gender==='male'} onChange={onChangeInputGender}/>
             </fieldset>
 
             <label htmlFor="birthYear">생년</label>
-            <select id="birthYear">
+            <select id="birthYear" value={birthYear}
+            onChange={e=>setBirthYear(e.target.value)}>
                 <option value='1984'>1984년</option>
                 <option value='1985'>1985년</option>
                 <option value='1986'>1986년</option>
@@ -72,11 +106,11 @@ export default function Form() {
             </select>
 
             <label htmlFor="birthYear">자기소개</label>
-            <textarea value={""} />
+            <textarea value={description} onChange={e=>setDescription(e.target.value)} />
 
             <fieldset>
                 <legend>약관동의</legend>
-                <input id="agree-prov" type="checkbox" name="agreeProv" value= { "yes" } defaultChecked={ false } />
+                <input id="agree-prov" type="checkbox" name="agreeProv" value= {agreeProv} checked={agreeProv==='yes'} onChange={onChangeAgreeProv} />
                 <label>서비스 약관에 동의합니다.</label>
             </fieldset>
 
