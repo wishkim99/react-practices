@@ -14,3 +14,6 @@ config/webpack.config.js
 
 4. 실행
 $ npm run debug
+
+
+과제3. emaillist의 email 컴포넌트를 data.json(샘플데이터로 적용하기) 수행
