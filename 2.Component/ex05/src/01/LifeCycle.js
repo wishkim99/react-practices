@@ -56,11 +56,14 @@ export default class LifeCircle extends Component {
      *  DOM 업데이트가 끝난 직후 호출 DOM 작업이 가능하다.
      *  변경 전의 state 값과 props값에 접근 가능
      */
+    "10, 20, 30"
+    #ff1908
     componentDidUpdate(prevProps, prevState, snapshot) {
         // console.log(`[UPDATE05]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${snapshot})`);
 
+        //s는 스트링으로 "#"이 셋팅이 됨, e에는 10이 들어감(20, 30..)
         const hexColor = snapshot.replace(/[^\d,]/g, '').split(',').map(e => parseInt(e)).reduce((s, e) => s + ('0' + e.toString(16)).slice(-2), "#");
-        //   "10, 20, 30" -> [10, 20, 30] -> reduce( '#' -> '#0a' -> '#0af5' -> '#0xf5ee')
+        //  "RGB(10, 20, 30)" -> "10, 20, 30" -> [10, 20, 30] -> reduce( '#' -> '#0a' -> '#0af5' -> '#0xf5ee')
 
         console.log(`[UPDATE05]: componentDidUpdate(prevProps=${prevProps.color}, prevState=${prevState.color}, snapshot=${hexColor})`);
     }
