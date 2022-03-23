@@ -15,9 +15,9 @@ export default class App extends Component {
         return{
             hours: ("0" + (hours == 0 ? 12 : hours > 12 ? hours - 12 : hours)).slice(-2),
             minutes: ('0'+date.getMinutes()).slice(-2),
-            seconds: ('0'+date.getMinutes()).slice(-2),
+            seconds: ('0'+date.getSeconds()).slice(-2),
             session: hours > 12 ? 'pm' : 'am',
-            ticks: this.state?this.state.ticks+1:0,
+            ticks: this.state?this.state.ticks+1:0
         };
     }
 
@@ -27,25 +27,23 @@ export default class App extends Component {
                 <h2>ex05 - Component LifeCycle Practice</h2>
                 {
                     //10번 될때 사라지게, 11되면 다시 보이게
-                    this.state.ticks%10==0? 
-                    null:(
+                    this.state.ticks%10==0? null:
                     <Clock
                         hours={this.state.hours}
                         minutes={this.state.minutes}
                         seconds={this.state.seconds}
                         session={this.state.session} />
-                    )}
+                    }
             </div>
         );
     }
     componentDidMount(){
-        this.interval = setInterval(() => {
+        this.interval = setInterval(function() {
             this.setState(this.getCurrentClockTime());
-        }, 1000);
+        }.bind(this), 1000);
     }
     componentWillUnmount(){
         //console.log("Unmount!!");
         clearInterval(this.interval);
     }
 }
-
