@@ -17,8 +17,19 @@ const App = () => {
         },
         body: null
       });
+      if(!response.ok){
+        console.log("error: ", response.status, response.statusText);
+        return;
+      }
 
-      console.log(response);
+      const json = await response.json();
+      if(json.result!=='success'){
+        console.log("error: ", json.message);
+        return;
+      }
+
+      //json 데이터는 배열
+      setEmails(json.data);
   }, []);
 
 
