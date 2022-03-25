@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = function(env) { 
     return {
-        mode: 'development',
         entry: path.resolve(`src/index.js`),
         output: {
             path: path.resolve('../backend/src/main/resources'),
@@ -31,9 +30,9 @@ module.exports = function(env) {
         },
         devServer: {
             host: '0.0.0.0',
-            port: 9090,
+            port: 9999,
             proxy: {
-                '/api': 'http://localhost:8080'
+                '/api': 'http://localhost:8888'
             },
             liveReload: true,
             hot: false,
