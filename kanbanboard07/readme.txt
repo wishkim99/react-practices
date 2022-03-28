@@ -7,7 +7,7 @@ config/babel.config.json
 config/webpack.config.js
 
 3. npm 스크립팅
-    "scripts": {
+  "scripts": {
     "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "npx webpack --config config/webpack.config.js --mode production", 
     "build:backend": "cd ../backend && mvn clean package",

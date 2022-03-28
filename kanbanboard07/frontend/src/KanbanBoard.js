@@ -1,7 +1,6 @@
 import React from 'react';
 import CardList from './CardList';
 import styles from './assets/css/KanbaBoard.css';
-import cards from './assets/json/data.json';
 
 const KanbanBoard = () => {
   // console.log([0, 1, 2, 3, 4].filter(e => e % 2 === 0));
