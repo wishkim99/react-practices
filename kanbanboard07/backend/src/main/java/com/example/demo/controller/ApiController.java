@@ -20,7 +20,6 @@ public class ApiController {
 
 	@GetMapping("/card")
 	public ResponseEntity<JsonResult> readCard() {
-		System.out.println("hhh");
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(cardRepository.findAll()));
