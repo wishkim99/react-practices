@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,31 +14,22 @@ public class TaskRepository {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	
-	public List<TaskVo> findAll() {
-		System.out.println("tasktastk");
-		List<TaskVo> list = sqlSession.selectList("task.findAll");
-		System.out.println(list.toString());
-		return list;
+
+	public List<TaskVo> findAllByCardNo(Long cardNo) {
+		return sqlSession.selectList("task.findAllByCardNo", cardNo);
 	}
-	
-	
-	public List<TaskVo> findByNo(Long card_no) {
-		List<TaskVo> list= sqlSession.selectList("task.findByNo", card_no);
-		System.out.println(list.toString());
-		return list;
+
+	public Boolean insert(TaskVo taskVo) {
+		return sqlSession.insert("task.insert", taskVo) == 1;
 	}
 	
 
-	public boolean insert(TaskVo vo) {
-		return sqlSession.insert("task.insertTask", vo) == 1;
-	}
 
-	public boolean delete(Long no) {
-		return sqlSession.delete("task.deleteTask", no) == 1;
-	}
+	public Boolean updateDone(Long no, String done) {
+		return sqlSession.update("task.updateDone", new HashMap<String, Object>() {{
+		    put("no", no);
+		    put("done", done);
+		}}) == 1;
 
-	public boolean update(TaskVo vo) {
-		return sqlSession.update("task.update", vo) == 1;
 	}
 }
