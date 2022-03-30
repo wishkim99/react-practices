@@ -10,6 +10,7 @@ import com.example.demo.vo.CardVo;
 
 @Repository
 public class CardRepository {
+	
 	@Autowired
 	private SqlSession sqlSession;
 	
@@ -19,5 +20,7 @@ public class CardRepository {
 		System.out.println(list.toString());
 		return list;
 	}
+	
+	
 	
 }
