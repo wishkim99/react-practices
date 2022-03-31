@@ -17,7 +17,7 @@ export default function App() {
         };
     }, []);
 
-    return (function(){
+    return (()=>{
         switch(route) {
             case '/' :
                 return <Main />;
