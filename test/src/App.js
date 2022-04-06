@@ -1,11 +1,12 @@
-
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 //import './assets/css/styles.css';
 //import './App.css';
 import Sidebar from  "./Sidebar";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {									
   return (									
+    <Router>
     <div className="App">	
      						
       {/* NavBar */}									
@@ -60,6 +61,7 @@ function App() {
       {/* more button */}			
       <Sidebar />		
      </div>
+     </Router>
     
   );
   
