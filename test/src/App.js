@@ -1,10 +1,13 @@
+
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import './assets/css/styles.css';
+//import './assets/css/styles.css';
 //import './App.css';
-									
+import Sidebar from  "./Sidebar";
+
 function App() {									
   return (									
-    <div className="App">									
+    <div className="App">	
+     						
       {/* NavBar */}									
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">									
         <Container>									
@@ -55,7 +58,7 @@ function App() {
       {/* jumbotron */}									
       {/* cart contents */}									
       {/* more button */}			
-
+      <Sidebar />		
      </div>
     
   );
