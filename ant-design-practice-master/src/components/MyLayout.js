@@ -7,7 +7,6 @@ import MyTable from "./MyTable";
 
 const MyLayout = () => {
   return (
-   
     <ProLayout>
       <PageContainer
         extra={[

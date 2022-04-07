@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import { Layout, Menu, Breadcrumb, Button, Alert } from "antd";
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { Layout } from "antd";
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const { Header, Sider } = Layout;
 
-import MyTable from "./MyTable";
-
-import Navii from  "./Navii";
+import SiteHeader from "./layout/SiteHeader";
+import SiteMenu from "./layout/SiteMenu";
+import SiteContent from "./layout/SiteContent";
+import SiteFooter from "./layout/SiteFooter";
 
 const Main = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -25,51 +18,21 @@ const Main = () => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-        <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </Menu.Item>
-          <Menu.Item key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-            <SubMenu key="11"></SubMenu>
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
-            <Menu.Item key="5">Alex</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-            <Menu.Item key="6">Team 1</Menu.Item>
-            <Menu.Item key="8">Team 2</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="9" icon={<FileOutlined />}>
-            Files
-          </Menu.Item>
-        </Menu>
-      </Sider>
+      <Header
+        className="site-layout-background"
+        style={{ padding: 0, textAlign: "right" }}
+      >
+        <SiteHeader />
+      </Header>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
-          <Navii/>
-          <Alert type="warning" message="hihi"></Alert>
-        </Header>
-        <Content style={{ margin: "0 16px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-          </Breadcrumb>
-          <div
-            className="site-layout-background"
-            style={{ padding: 24, minHeight: 360 }}
-          >
-            Bill is a cat.
-            <MyTable />
-          </div>
-        </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
+        <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+          <SiteMenu />
+        </Sider>
+
+        <Layout>
+          <SiteContent test={"hi"} />
+          <SiteFooter />
+        </Layout>
       </Layout>
     </Layout>
   );
