@@ -1,3 +1,7 @@
+import { Menu } from "antd";
+import MenuItem from "antd/lib/menu/MenuItem";
+import SubMenu from "antd/lib/menu/SubMenu";
+import React from "react";
 import {
   DesktopOutlined, 
   FormOutlined, 
@@ -7,13 +11,10 @@ import {
   TeamOutlined, 
   ToolOutlined, 
   WarningOutlined,
-  BulbOutlined 
+  BulbOutlined,
+  SettingOutlined,
+  SmileOutlined 
 } from "@ant-design/icons";
-import { Menu } from "antd";
-import MenuItem from "antd/lib/menu/MenuItem";
-import SubMenu from "antd/lib/menu/SubMenu";
-import React from "react";
-
 
 const SiteMenu = () => {
   return (
@@ -23,7 +24,21 @@ const SiteMenu = () => {
       mode="inline"
       style={{ height: "100%", borderRight: 0 }}
     >
-      <Menu.Item key="1" icon={<PieChartOutlined />}>
+      <Menu.Item key="1" icon={<SmileOutlined style={{ padding: '45px', fontSize: '300%'}}/>}
+                style={{ height: "80px", color:'white'}
+                }
+       >
+      </Menu.Item>
+      
+      <Menu.Item key="1" 
+                style={{padding: '45px', color:'white'}}
+       >
+           홍길동 님 <SettingOutlined />
+      </Menu.Item>
+    
+
+
+      <Menu.Item key="3" icon={<PieChartOutlined />}>
         기준정보 관리
       </Menu.Item>
 
