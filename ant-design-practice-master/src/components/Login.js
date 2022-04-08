@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import '../assets/css/index.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import loginImg from './img/bg_main.png'
 
 const NormalLoginForm = () => {
   const onFinish = values => {
@@ -11,6 +12,8 @@ const NormalLoginForm = () => {
 
   return (
     <div style={{display: 'flex', justifyContent:'center'}}>
+      <img src={loginImg}  alt="" width={500}></img>
+
     <Form
       name="normal_login"
       className="login-form"
