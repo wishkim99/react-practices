@@ -1,6 +1,5 @@
 import { LaptopOutlined } from '@ant-design/icons';
 import { Layout, Menu, Select, Typography } from "antd";
-import MenuItem from "antd/lib/menu/MenuItem";
 import React from "react";
 import '../../assets/css/App.css';
 
@@ -17,9 +16,19 @@ const SiteHeader = () => {
       <Layout>
           <Header style={{padding:15}}>
           <Title style={{color:'white', float:'left'}} level={3}><LaptopOutlined />With POSCO  | 내부회계관리 시스템</Title>    
-    
+          
+          <Menu
+            theme="dark"
+            defaultSelectedKeys={["sub10-1-1"]}
+            style={{ height: "0", marginLeft: '30px', marginRight: '800px'}}
+          >
+            <Menu.Item
+                        style={{ paddingLeft: '160px',  fontSize: '15px',  color:'white'}}            
+              >
+                포스코 ITGC실 ITAC그룹 AC섹션 홍길동 님
+              </Menu.Item>
+            </Menu>
 
-      
             <Select
                 style={{padding:5, float:'right'}}
                 defaultValue={"한국어"}
@@ -31,7 +40,6 @@ const SiteHeader = () => {
               <Select.Option value="en">English</Select.Option>
               <Select.Option value="cn">中文</Select.Option>
             </Select>
-
 
             <Select
               style={{padding:5, float:'right'}}
