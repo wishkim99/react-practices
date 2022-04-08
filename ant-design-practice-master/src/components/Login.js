@@ -10,6 +10,7 @@ const NormalLoginForm = () => {
   };
 
   return (
+    <div style={{display: 'flex', justifyContent:'center'}}>
     <Form
       name="normal_login"
       className="login-form"
@@ -61,7 +62,9 @@ const NormalLoginForm = () => {
         Or <a href="">register now!</a>
       </Form.Item>
     </Form>
+    </div>
   );
 };
+
 
 export default NormalLoginForm;
