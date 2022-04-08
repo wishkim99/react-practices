@@ -15,18 +15,7 @@ const SiteHeader = () => {
     <React.Fragment>
       <Layout>
           <Header style={{padding:15}}>
-          <Title style={{color:'white', float:'left'}} level={3}><LaptopOutlined />With POSCO  | 내부회계관리 시스템</Title>
-              <Select
-                style={{padding:5, float:'right'}}
-                defaultValue={"한국어"}
-                onChange={(value) => {
-                  console.log(`selected item ${value}`);
-                }}
-              >
-              <Select.Option value="ko">한국어</Select.Option>
-              <Select.Option value="en">English</Select.Option>
-              <Select.Option value="cn">中文</Select.Option>
-            </Select>
+          <Title style={{color:'white', float:'left'}} level={3}><LaptopOutlined />With POSCO  | 내부회계관리 시스템</Title>    
             <Select
               style={{padding:5, float:'right'}}
               defaultValue={"2021년"}
